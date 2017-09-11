@@ -9,7 +9,15 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textSize="30sp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/imageViewCaps"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="left"
+        android:src="@drawable/caps_off_icon" />
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.things.contrib.driver.adcv2x.Adcv2x;
 import com.google.android.things.pio.Gpio;
@@ -125,6 +126,26 @@ public abstract class SimplePicoPro extends SimpleBoard {
 
     public void setActivity(Activity a) {
         activity = a;
+    }
+
+    void setImageCaps(boolean capsOn) {
+        if (activity == null) {
+            Log.e(TAG,"toggleImageCaps: activity is null");
+            return;
+        }
+
+        ImageView imageView;
+        imageView = (ImageView) activity.findViewById(R.id.imageViewCaps);
+
+        if(imageView != null) {
+            if (capsOn) {
+                imageView.setImageResource(R.drawable.caps_on_icon);
+            } else {
+                imageView.setImageResource(R.drawable.caps_off_icon);
+            }
+        } else {
+            Log.e(TAG,"toggleImageCaps: Could not find R.id.imageViewCaps");
+        }
     }
 
     void printCharacterToScreen(char c) {
