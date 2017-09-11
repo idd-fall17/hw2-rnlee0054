@@ -17,10 +17,12 @@ import java.util.HashSet;
 
 public class MultiTapApp extends SimplePicoPro {
     private long oldMs; // Time in millis from program start to last key press.
+    private long debounceMs; // Time in millis from program start to last key press.
     private char charPrint; // Current character of key's char sequence.
     private boolean shift; // Capitalize/alternate button function state.
 
-    private final long DELAY_TIME = 350; // Key press timeout.
+    private final long DELAY_TIME = 350; // Key press timeout ms.
+    private final long DEBOUNCE_TIME = 50; // Debounce delay ms.
     // Key character groupings.
     private final ArrayList<Character> TWO = new ArrayList<>(Arrays.asList('a', 'b', 'c'));
     private final ArrayList<Character> THREE = new ArrayList<>(Arrays.asList('d', 'e', 'f'));
@@ -110,7 +112,17 @@ public class MultiTapApp extends SimplePicoPro {
 
     @Override
     void digitalEdgeEvent(Gpio pin, boolean value) {
+        // Do not act on other HIGHs between (HIGH time) and (HIGH time + debounce delay).
+        if (value == HIGH && millis() - debounceMs < DEBOUNCE_TIME) {
+            return;
+        }
+
         setTime();
+        // Set time when a value reaches HIGH (button released).
+        if (value == HIGH) {
+            setDebounceTime();
+        }
+
         println("digitalEdgeEvent"+pin+", "+value);
         // This is on button release for pull-up resistors.
         if (GPIOS.contains(pin) && value==HIGH) {
@@ -173,5 +185,9 @@ public class MultiTapApp extends SimplePicoPro {
 
     private void setTime() {
         oldMs = millis();
+    }
+
+    private void setDebounceTime() {
+        debounceMs = millis();
     }
 }
