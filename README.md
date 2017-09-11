@@ -1,6 +1,8 @@
 # Rnl's Multi-Tap Keyboard on Android Things 
 
-[Demo video](https://www.youtube.com/watch?v=AmGAt845jz4)
+### [Demo video](https://www.youtube.com/watch?v=AmGAt845jz4)
+
+A short demo video typing the phrase "Hello World".
 
 ## The text entry technique: Multi-tap
 
@@ -12,6 +14,9 @@ the relevant key to cycle to it.
 With practice, it is easy to use the keyboard with one hand as well as have 0 
 focus-of-attention (FOA), i.e. the user will not have to focus their eyes on 
 the keyboard nor screen.
+
+In this implementation, the user can write all alphabet characters in lower- and 
+upper-case, space, and delete characters (backspace).
 
 ![](https://raw.githubusercontent.com/idd-fall17/hw2-rnlee0054/master/docs/294-084-2-img0.jpg)
 
