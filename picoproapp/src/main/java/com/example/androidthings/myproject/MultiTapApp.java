@@ -21,8 +21,8 @@ public class MultiTapApp extends SimplePicoPro {
     private char charPrint; // Current character of key's char sequence.
     private boolean shift; // Capitalize/alternate button function state.
 
-    private final long DELAY_TIME = 350; // Key press timeout ms.
-    private final long DEBOUNCE_TIME = 50; // Debounce delay ms.
+    private final long DELAY_TIME = 400; // Key press timeout ms.
+    private final long DEBOUNCE_TIME = 20; // Debounce delay ms.
     // Key character groupings.
     private final ArrayList<Character> TWO = new ArrayList<>(Arrays.asList('a', 'b', 'c'));
     private final ArrayList<Character> THREE = new ArrayList<>(Arrays.asList('d', 'e', 'f'));
