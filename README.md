@@ -1,5 +1,7 @@
 # Rnl's Multi-Tap Keyboard on Android Things 
 
+[Demo video](https://www.youtube.com/watch?v=AmGAt845jz4)
+
 ## The text entry technique: Multi-tap
 
 This text entry technique on Android Things implements a multi-tap keyboard using 
@@ -10,6 +12,11 @@ the relevant key to cycle to it.
 With practice, it is easy to use the keyboard with one hand as well as have 0 
 focus-of-attention (FOA), i.e. the user will not have to focus their eyes on 
 the keyboard nor screen.
+
+![](https://raw.githubusercontent.com/idd-fall17/hw2-rnlee0054/master/docs/294-084-2-img0.jpg)
+
+The final setup using the Pico Pro Maker Kit for Android Things.
+
 
 ## Why I chose multi-tap
 
@@ -62,6 +69,10 @@ which occurs between the HIGH time and the HIGH time + delay.
 
 ## Hardware construction
 
+![](https://raw.githubusercontent.com/idd-fall17/hw2-rnlee0054/master/docs/294-084-2-schematic.png)
+
+The schematic of the hardware construction. Unused pins are hidden for simplictiy.
+
 ### Materials
 
 - Pico Pro maker kit
@@ -96,7 +107,7 @@ had elsewhere (laser cutter!).
 It was not particularly difficult, but it was very time-consuming especially 
 due to my lack of experience.
 
-# Usage of This Codebase
+# Usage of this Codebase
 
 ## Pre-requisites
 
